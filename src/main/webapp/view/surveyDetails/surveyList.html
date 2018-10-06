@@ -1,0 +1,62 @@
+<div ng-controller="surveyController">
+	<div ng-include="'/DealerCensus/view/menu.html'"></div>
+	<div class="main main-raised">
+		<div class="container">
+			<div class="section table-responsive">
+				<table class="table table-striped table-bordered compact table-hover nowrap">
+					<thead>
+						<tr>
+							<th>Sr. No</th>
+							<th>Form No</th>
+							<th>Name Of Dealer</th>
+							<th>Created By</th>
+							<th>Created Date</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="row in surveyDetails">
+							<td>{{$index + 1}}</td>
+							<td>{{row.form_id}}</td>
+							<td>{{row.dealer_name}}</td>
+							<td>{{row.created_by}}</td>
+							<td>{{row.created_date|date:"dd-MM-yyyy"}}</td>
+							<td>
+							<button class="btn btn-info btn-fab btn-round btn-sm"
+								data-toggle="modal" ng-click="editSurveyDetails(row)">
+								<i class="material-icons">edit</i>
+							</button>
+							<button class="btn btn-danger btn-fab btn-round btn-sm"
+								data-toggle="modal" data-target="#deleteSurveyModal" ng-click=deleteSurveyModel(row.id)>
+								<i class="material-icons">delete</i>
+							</button>
+							</td>
+						</tr>
+					<tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="deleteSurveyModal" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog alertModal modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Alert!</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<i class="material-icons">clear</i>
+					</button>
+				</div>
+				<div class="modal-body text-center">
+					<p>Survey will be deleted permanently, are you sure?</p>
+				</div>
+				<div class="modal-footer text-center">
+					<button type="button" class="btn btn-primary" ng-click="deleteSurveyDetails()">Ok</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-include="'/DealerCensus/view/footer.html'"></div>
+</div>

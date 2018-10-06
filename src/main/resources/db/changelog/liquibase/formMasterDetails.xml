@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet author="formMaster" id="changelog-1.0">
+		<createTable tableName="form_master">
+			<column name="id" type="BIGINT" autoIncrement="true">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="form_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="dealer_name" type="VARCHAR(50)" />
+			<column name="is_deleted" type="BOOLEAN" defaultValueBoolean="false" />
+			<column name="created_date" type="DATETIME" />
+			<column name="updated_date" type="DATETIME" />
+			<column name="created_by" type="BIGINT" />
+			<column name="last_updated_by" type="BIGINT" />
+			<column name="language_id" type="BIGINT" />
+
+		</createTable>
+
+		<addUniqueConstraint tableName="form_master" columnNames="form_id" constraintName="uk_form_id" />
+
+		<addForeignKeyConstraint baseTableName="form_master" baseColumnNames="created_by" constraintName="fk_created_by" 
+			referencedTableName="user_details" referencedColumnNames="id" />
+
+		<addForeignKeyConstraint baseTableName="form_master" baseColumnNames="last_updated_by" constraintName="fk_last_updated_by" 
+			referencedTableName="user_details" referencedColumnNames="id" />
+
+		<addForeignKeyConstraint baseTableName="form_master" baseColumnNames="language_id" constraintName="fk_language_id" 
+			referencedTableName="language_master" referencedColumnNames="id" />
+	</changeSet>
+
+
+	<changeSet author="formDetails" id="changelog-1.0">
+		<createTable tableName="form_details">
+			<column name="id" type="BIGINT" autoIncrement="true">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="form_detail" type="BLOB">
+				<constraints nullable="false" />
+			</column>
+			<column name="is_updated" type="BOOLEAN" defaultValueBoolean="false"/>
+			<column name="date" type="DATETIME" />
+			<column name="form_master_id" type="BIGINT" />
+			<column name="updated_by" type="BIGINT" />
+		</createTable>
+	
+		
+		<addForeignKeyConstraint baseTableName="form_details" baseColumnNames="form_master_id" constraintName="fk_form_master_id" 
+			referencedTableName="form_master" referencedColumnNames="id" />
+
+		<addForeignKeyConstraint baseTableName="form_details" baseColumnNames="updated_by" constraintName="fk_updated_by" 
+			referencedTableName="user_details" referencedColumnNames="id" />
+	</changeSet>
+
+</databaseChangeLog>

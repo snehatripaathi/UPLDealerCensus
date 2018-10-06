@@ -1,0 +1,84 @@
+<div ng-controller="userController">
+	<div ng-include="'/DealerCensus/view/menu.html'"></div>
+	<div class="main main-raised">
+		<div class="container">
+			<div class="section table-responsive">
+				<div class="card card-nav-tabs card-plain">
+					<div class="card-header card-header-primary">
+						<div class="nav-tabs-navigation">
+							<div class="nav-tabs-wrapper">
+								<ul class="nav nav-tabs" data-tabs="tabs">
+									<li class="nav-item"><a class="nav-link"
+										href="/userList" data-toggle="tab">User List</a></li>
+									<li class="nav-item"><a class="nav-link" ng-click="addUser()"
+										data-toggle="tab">Add User</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card-body ">
+						<div class="tab-content">
+							<div class="tab-pane active table-responsive" id="user_list">
+								<table id="userListTable"
+									class="table table-striped table-bordered compact table-hover nowrap"
+									style="width: 100%">
+									<thead>
+										<tr>
+											<th style="max-width: 55px;">Sr.No.</th>
+											<th>Surveyor name</th>
+											<th>Role</th>
+											<th>Email id</th>
+											<th>Mobile No</th>
+											<th style="max-width: 75px;">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="row in userDetails">
+											<td>{{$index + 1}}</td>
+											<td>{{row.user_name}}</td>
+											<td>{{row.type}}</td>
+											<td>{{row.email}}</td>
+											<td>{{row.phone_no}}</td>
+											<td>
+												<button class="btn btn-info btn-fab btn-round btn-sm"
+													data-toggle="modal" ng-click="editUserDetails(row)">
+													<i class="material-icons">edit</i>
+												</button>
+												<button class="btn btn-danger btn-fab btn-round btn-sm"
+													data-toggle="modal" data-target="#deleteUserModal" ng-click=deleteUserModel(row.id)>
+													<i class="material-icons">delete</i>
+												</button>
+											</td>
+										</tr>
+									<tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	 <div class="modal fade" id="deleteUserModal" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog alertModal modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Alert!</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<i class="material-icons">clear</i>
+					</button>
+				</div>
+				<div class="modal-body text-center">
+					<p>User will be deleted permanently, are you sure?</p>
+				</div>
+				<div class="modal-footer text-center">
+					<button type="button" class="btn btn-primary" ng-click="deleteUserDetails()">Ok</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-include="'/DealerCensus/view/footer.html'"></div>
+</div>

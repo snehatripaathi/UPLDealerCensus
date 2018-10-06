@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.upl.upl_survey.Dao.UserDao">
+
+	<resultMap id="UserResultMap" type="com.upl.upl_survey.Model.UserMaster">
+		<id column="id" property="id" />
+	</resultMap>
+
+	<resultMap id="UserDetailsMap" type="com.upl.upl_survey.Model.UserDetails" autoMapping="true">
+		<id column="id" property="id" />
+		<result column="email" property="email" />
+		<result column="password" property="password" />
+		<result column="phone_no" property="phone_no" />
+		<result column="created_by" property="created_by" />
+		<result column="updated_by" property="updated_by" />
+		<result column="created_date" property="created_date" />
+		<result column="updated_date" property="updated_date" />
+		<result column="user_master_id" property="user_master_id" />
+		<result column="type" property="type" />
+	</resultMap>
+
+	<resultMap id="FormMasterMap" type="com.upl.upl_survey.Model.FormMaster" autoMapping="true">
+		<id column="id" property="id" />
+		<association property="formdetails" columnPrefix="fdlt_" javaType="com.upl.upl_survey.Model.FormDetails" autoMapping="true">
+			<id column="id" property="id" />
+		</association>
+	</resultMap>
+	
+<!-- 	<resultMap id="FormDetailsMap" type="com.upl.upl_survey.Model.FormDetails"> -->
+		
+<!-- 	</resultMap> -->
+	
+	<select id="getUserId" resultType="java.lang.Long">
+		SELECT MAX(seq.seq_id)
+		FROM
+		sequence_gen seq
+        where seq.name=#{name}
+	</select>
+
+	<select id="getUserPassword" resultType="java.lang.String">
+		SELECT dtl.password
+		FROM
+		user_details dtl
+		where dtl.email = #{email}
+	</select>
+	
+	<update id="updateSequenceId" parameterType="com.upl.upl_survey.Model.SequenceGenerator">
+		update
+		sequence_gen set
+		seq_id = #{seq_id}
+		where name = #{name}
+	</update>
+
+	<select id="getLoginUser" parameterType="java.lang.String" resultMap="UserDetailsMap">
+		SELECT
+		usrdlt.id as id,
+		usrdlt.email as email,
+		usrdlt.password as password,
+		usrdlt.phone_no as phone_no,
+		usrdlt.created_by as created_by,
+		usrdlt.updated_by as updated_by,
+		usrdlt.created_date as created_date,
+		usrdlt.updated_date as updated_date,
+		usrdlt.user_master_id as user_master_id,
+		usrmst.type as type
+		FROM user_details usrdlt
+		JOIN user_master usrmst ON (usrmst.id = usrdlt.user_master_id)
+		WHERE usrdlt.email = #{email} 
+		AND usrdlt.is_deleted = false
+	</select>
+
+	<insert id="addUser" parameterType="com.upl.upl_survey.Model.UserDetails">
+		INSERT INTO user_details (id, user_name, password, created_by, updated_by, created_date, updated_date, phone_no, email, user_master_id, is_deleted)
+		VALUES
+		(#{id, jdbcType=INTEGER},
+		#{user_name, jdbcType=VARCHAR},  
+		#{password, jdbcType=VARCHAR}, 
+		#{created_by, jdbcType=INTEGER}, 
+		#{updated_by, jdbcType=INTEGER}, 
+		#{created_date, jdbcType=DATE}, 
+		#{updated_date, jdbcType=DATE},
+		#{phone_no, jdbcType=VARCHAR},
+		#{email, jdbcType=VARCHAR}, 
+		#{user_master_id, jdbcType=INTEGER}, 
+		false)
+	</insert>
+
+	<update id="updateUserDetails" parameterType="com.upl.upl_survey.Model.UserDetails">
+		update
+		user_details set
+		user_name = #{user_name, jdbcType=VARCHAR},  
+		password = #{password, jdbcType=VARCHAR},
+		email = #{email, jdbcType=VARCHAR},
+		phone_no = #{phone_no, jdbcType=VARCHAR},
+		updated_by = #{updated_by, jdbcType=INTEGER},
+		updated_date = #{updated_date, jdbcType=DATE},
+		user_master_id = #{user_master_id, jdbcType=INTEGER}
+		where id = #{id}
+	</update>
+
+	<update id="deleteUserDetails" parameterType="java.lang.Long">
+		UPDATE user_details set is_deleted = true WHERE id = #{id}
+	</update>
+
+	<select id="getAllUserDetails" resultMap="UserDetailsMap">
+		SELECT
+		usrdlt.id as id,
+		usrdlt.user_name as user_name,
+		usrdlt.password as password,
+		usrdlt.email as email,
+		usrdlt.phone_no as phone_no,
+		usrdlt.created_by as created_by,
+		usrdlt.updated_by as updated_by,
+		usrdlt.is_deleted as usrdlt,
+		usrdlt.user_master_id as user_master_id,
+		usrmst.type as type
+		FROM user_details usrdlt
+		JOIN user_master usrmst ON (usrmst.id = usrdlt.user_master_id)
+		WHERE usrmst.type != 'SYSADMIN'
+		AND usrdlt.is_deleted = false
+		
+	</select>
+
+	<insert id="createForm">
+		INSERT INTO form_master
+		(id, form_id, dealer_name, is_deleted, created_date, updated_date, created_by, last_updated_by, language_id)
+		VALUES
+		(#{id, jdbcType=INTEGER}, 
+		#{form_id, jdbcType=VARCHAR},
+		#{dealer_name, jdbcType=VARCHAR},
+		false, 
+		#{created_date, jdbcType=DATE}, 
+		#{updated_date, jdbcType=DATE}, 
+		#{created_by, jdbcType=INTEGER},
+		#{last_updated_by, jdbcType=INTEGER},
+		1)
+	</insert>
+	
+	<select id="getFormId" resultType="java.lang.Long">
+		SELECT id
+		From
+		form_master 
+		where form_id = #{form_id}
+	</select>
+	
+	<insert id="insertFormDetails" >
+		INSERT into
+		form_details(id, form_detail, is_updated, date, form_master_id, updated_by)
+		values
+		(#{id, jdbcType=INTEGER},
+		 #{form_detail, jdbcType=BLOB},
+		 true,
+		 #{date, jdbcType=DATE},
+		 #{form_master_id,jdbcType=INTEGER},
+		 #{updated_by, jdbcType=INTEGER})
+	</insert>
+
+	<update id="deleteForm" parameterType="java.lang.Long">
+		UPDATE form_master
+		set is_deleted = true where id = #{id, jdbcType=INTEGER}
+	</update>
+	
+	<update id="updateIsUpdated" parameterType="java.lang.Long">
+		UPDATE form_details
+		set is_updated = false where form_master_id = #{form_master_id, jdbcType=INTEGER}
+	</update>
+	
+	<update id="updateFormMasterData">
+		UPDATE
+		form_master set
+		form_id = #{form_id},
+		updated_date = #{updated_date},
+		last_updated_by = #{last_updated_by},
+		dealer_name= #{dealer_name}
+		where id = #{id, jdbcType=INTEGER}
+	</update>
+	
+	<select id="getAllForms" resultMap="FormMasterMap">
+		SELECT fmaster.id 			as id,
+		  fmaster.form_id 			as form_id,
+		  fmaster.dealer_name 		as dealer_name,
+	      fmaster.is_deleted 		as is_deleted,
+	      fmaster.created_date 		as created_date,
+	      fmaster.updated_date 		as updated_date,
+	      fmaster.created_by 		as created_by,
+	      fmaster.last_updated_by 	as last_updated_by,
+	      fmaster.language_id 		as language_id,
+	      fdetails.id 				as fdlt_id,
+	      fdetails.form_detail 		as fdlt_form_detail,
+	      fdetails.is_updated 		as fdlt_is_updated,
+	      fdetails.date 			as fdlt_date,
+	      fdetails.form_master_id 	as fdlt_form_master_id,
+	      fdetails.updated_by 		as fdlt_updated_by
+		  FROM form_master fmaster
+	      LEFT JOIN form_details fdetails ON (fdetails.form_master_id = fmaster.id)
+	      WHERE fmaster.is_deleted = 0 AND fdetails.is_updated = 1
+	</select>
+	
+</mapper>

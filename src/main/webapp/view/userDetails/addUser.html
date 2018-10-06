@@ -1,0 +1,58 @@
+<div ng-controller="userController">
+	<div ng-include="'/DealerCensus/view/menu.html'"></div>
+	<div class="main main-raised">
+		<div class="container">
+			<div class="section">
+				<div class="tab-pane">
+						<form class="form" name ="userForm" role="form"  autocomplete="off">
+							<div class="col-lg-4 col-sm-6">
+								<div class="form-group">
+									<label for="surveyor_name_input" class="bmd-label-floating">Surveyor name</label> 
+										<input type="text" class="form-control"
+										id="surveyor_name" ng-model="data.user_name" autocomplete="off" required>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="form-group bmd-form-group is-filled">
+									<label for="surveyor_name_input" class="bmd-label-floating">Role</label>
+										<select class="form-control" ng-model="data.type">
+										<option ng-repeat="role in roles" value="{{role.name}}">{{role.name}}</option>
+										</select>
+<!-- 									<select class="form-control" ng-model="data.type" ng-options="role for role in roles" > -->
+<!-- 									</select> -->
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="form-group">
+									<label for="email_input" class="bmd-label-floating">Email id</label> 
+									<input type="email" class="form-control" id="email" ng-model="data.email" required>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="form-group">
+									<label for="password_input" class="bmd-label-floating">Password</label>
+									<input type="password" class="form-control" id="password" ng-model="data.password" required>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="form-group">
+									<label for="mobile_input" class="bmd-label-floating">Mobile No.</label> 
+									<input type="text" class="form-control" id="mobile" ng-model="data.phone_no" autocomplete=false required>
+								</div>
+							</div>
+							<div class="col-sm-12 text-center">
+								<input ng-show="isShow" type="button" class="btn btn-primary" ng-click="addNewUser()" ng-disabled="userForm.$invalid" type="submit" value="Add" />
+							</div>
+							<div class="col-sm-12 text-center">
+								<input type="button" class="btn btn-primary" ng-click="gotoUserList()" type="submit" value="Cancle" />
+							</div>
+							<div class="col-sm-12 text-center">
+								<input ng-hide="isShow" type="button" class="btn btn-primary" ng-click="updateUserDetails()" ng-disabled="userForm.$invalid" type="submit" value="Save" />
+							</div>
+						</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-include="'/DealerCensus/view/footer.html'"></div>
+</div>

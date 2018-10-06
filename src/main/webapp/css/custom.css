@@ -1,0 +1,193 @@
+html, body{height: 100%;}
+/*Table Design*/
+.dataTable thead tr{
+	background-color: rgb(237, 28, 36);
+	color:#fff;
+}
+.dataTables_length select{
+	border: 1px solid #999;
+}
+.dataTable td .btn{
+	margin-top:0;
+	margin-bottom:0;
+}
+.login-page-header:before, .login-page-header:after, .login-page-header{
+	height: 100%;
+}
+.login-logo-img{
+	max-width: 100%;
+	width: 150px;
+}
+.login-page-header .card .card-header-primary{
+  background: linear-gradient(60deg, rgba(237, 28, 36,1), rgba(237, 28, 36,1));
+}
+.navbar .navbar-nav .nav-item.active .nav-link, .navbar .navbar-nav .nav-item .nav-link:hover, .navbar .navbar-nav .nav-item .nav-link:focus{
+	background-color:rgba(237, 28, 36,1);
+	color:#fff;
+}
+.navbar .navbar-nav .nav-item .nav-link {
+    margin-right: 5px;
+}
+.navbar .navbar-nav .nav-item:nth-last-child(1) .nav-link {
+    margin-right: 0;
+}
+.section-title{
+	margin: 10px 0 15px;
+}
+.question-text {
+	font-size: 14px;
+	font-weight: 400;
+	color: #777;
+	margin: 8px 0;
+}
+.form-control[disabled]{
+	background-color:transparent;
+	cursor: not-allowed;
+}
+.shop-location-container .form-check{
+	display: inline-block;
+	margin-right: 15px;
+}
+.shop-location-container label{
+	display: block;
+}
+.cust-card-header {
+    padding: 6px 15px !important;
+}
+#other_agricultural_products_input .form-group, .table .form-group{
+	padding-top:0;
+	margin-bottom:0;
+}
+.table tbody .form-control{padding: 7px 0; height: 28px;}
+.table-condensed > tbody > tr > td{text-align:left; padding:0 7px; vertical-align:middle;}
+.table-condensed.text-center > tbody > tr > td, .table-condensed.text-center > thead > tr > th{text-align:center;}
+.table-condensed > thead > tr > th{text-align:left; padding:0 7px;}
+
+
+
+/*progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 20%;
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    display: block;
+    font-size: 12px;
+    color: #fff;
+    background: #000;
+    border-radius: 25px;
+    margin: 0 auto 10px auto;
+	font-weight: bold;
+	text-align: center;
+	line-height: 23px;
+	cursor: pointer;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+    content: none;
+}
+
+#progressbar li.active:before{
+    background: rgba(237, 28, 36,1);
+}
+.table tfoot tr{background-color: #ccc;}
+.card .season-sale-tbl td  .form-check{
+    margin:0;
+    margin-top:5px;
+}
+.card .season-sale-tbl td  .form-check .form-check-sign::before{
+    transform: none;
+    left: -3px;
+    top: -1px;
+}
+.card .season-sale-tbl td .form-check .form-check-label {
+    position: static;
+}
+.card .season-sale-tbl td .form-check .form-check-label span {
+    left: 50%;
+    margin: 0 0 0 -9px;
+}
+.table-condensed.season-sale-tbl > tbody > tr > td, .table-condensed.season-sale-tbl > thead > tr > th{padding:4px 7px;}
+.table-condensed.season-sale-tbl > tbody > tr td[rowspan] {
+    background-color: #fff !important;
+}
+.alertModal.modal-dialog .modal-header{
+	padding: 10px 24px;
+	background-color:rgb(237, 28, 36);
+	color:#fff;
+}
+.alertModal.modal-dialog .modal-header .modal-title {
+    margin: 0;
+	font-weight: 500;
+}
+.modal-dialog .modal-footer {
+	padding: 10px 24px;
+}
+.modal-footer {
+    display: block;
+}
+.alertModal .modal-header .close {
+    color: #fff;
+	opacity:1;
+}
+.alertModal .modal-footer .btn {
+    min-width:70px;
+}
+[type="search"] {
+    -webkit-appearance: textfield;
+}
+.select2-selection.select2-selection--single {
+	line-height: 34px;
+	height: 34px;
+	padding: 2px 0px;
+	border: none;
+	border-bottom: 1px solid #d2d2d2;
+	border-radius: 0;
+	font-weight: 500;
+}
+.persantageContainer .form-control.text-right {
+    padding-right: 15px;
+}
+.persantageContainer .input-group-addon {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.persantageContainer.col-sm-4 .input-group-addon {
+    right: 15px;}
+.input-group.persantageContainer {
+    position: relative;
+}

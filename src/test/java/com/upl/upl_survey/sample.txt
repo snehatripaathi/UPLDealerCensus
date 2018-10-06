@@ -1,0 +1,128 @@
+package com.upl.upl_survey.Manager;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.apache.ibatis.annotations.Param;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.upl.upl_survey.Dao.UserDao;
+import com.upl.upl_survey.Model.UserDetails;
+import com.upl.upl_survey.Model.UserMaster;
+import com.upl.upl_survey.postModel.userLogin;
+
+@RestController
+@Produces(MediaType.APPLICATION_JSON)
+@RequestMapping("/upl_survey")
+public class UPLServices {
+
+	@Autowired
+	private UserDao userDao;
+
+	@RequestMapping(value = "/UserLogin")
+	public List<UserMaster> getUsers() {
+		List<UserMaster> users = userDao.getUserRoles();
+
+		if (users.isEmpty()) {
+			UserMaster user = new UserMaster();
+			user.setId(1);
+			user.setType("ADMIN");
+			users.add(user);
+		}
+		System.out.println("Users Roles List:{}" + users.toString());
+		return users;
+	}
+
+	@RequestMapping(value = "/checkValidUser", method = RequestMethod.POST)
+	public UserDetails checkValidUser(@RequestBody userLogin usrLogin) {
+		UserDetails userMst = userDao.checkValidUser(usrLogin.getEmail(), usrLogin.getPassword());
+		return userMst;
+	}
+
+	@RequestMapping(value = "/registerUser")
+	public JSONObject registerUser(@RequestBody UserDetails usrDetail) throws JSONException {
+		JSONObject responseJson = new JSONObject();
+		try {
+			System.out.println("Insert function...");
+			boolean status = userDao.registerUser(usrDetail);
+			System.out.println("Values Inserted..." + status);
+			if (status) {
+				responseJson.put("status", status);
+			} else {
+				responseJson.put("status", status);
+			}
+			return responseJson;
+		} catch (Exception e) {
+			responseJson.put("status", false);
+			return responseJson;
+		}
+	}
+
+	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
+	public void addUser(@Param("password") String password, @Param("created_by") Long created_by,
+			@Param("updated_by") Long updated_by, @Param("created_date") Date created_date,
+			@Param("updated_date") Date updated_date, @Param("phone_No") Number phone_No, @Param("email") String email,
+			@Param("user_master_id") Long user_master_id) {
+		System.out.println("Insert function...");
+		userDao.addUser(password, created_by, updated_by, created_date, updated_date, phone_No, email, user_master_id);
+		System.out.println("Values Inserted...");
+	}
+
+	@RequestMapping(value = "/loginUser", method = RequestMethod.POST)
+	public UserDetails checkValidUser(@Param("email") String email, @Param("password") String password) {
+		UserDetails details = userDao.loginUser(email, password);
+		return details;
+	}
+
+}
+
+package com.upl.upl_survey.Dao;
+
+import java.util.Date;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.upl.upl_survey.Model.UserDetails;
+import com.upl.upl_survey.Model.UserMaster;
+
+public interface UserDao {
+
+	List<UserMaster> getUserRoles();
+
+	UserDetails checkValidUser(@Param("email") String email, @Param("password") String password);
+
+	boolean registerUser(UserDetails usrDetail);
+
+	// List<UserDetails> getUserList();
+	void addUser(@Param("password") String password, @Param("created_by") Long created_by,
+			@Param("updated_by") Long updated_by, @Param("created_date") Date created_date,
+			@Param("updated_date") Date updated_date, @Param("phone_No") Number phone_No, @Param("email") String email,
+			@Param("user_master_id") Long user_master_id);
+
+	UserDetails loginUser(@Param("email") String email, @Param("password") String password);
+}
+
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>servlet-api</artifactId>
+		    <version>2.5</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+		  <groupId>javax.ws.rs</groupId>
+		  <artifactId>javax.ws.rs-api</artifactId>
+		  <version>2.0</version>
+		</dependency>
+		
+		byte[] objAsBytes = obj.toString().getBytes("UTF-8");

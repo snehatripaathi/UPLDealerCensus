@@ -1,0 +1,5370 @@
+<div ng-controller="surveyController">
+	<div class="main main-raised">
+		<div class="container">
+			<div class="section">
+				<h3 class="text-center section-title">DEALER CENSUS SURVEY
+					SCHEDULE</h3>
+				<ul id="progressbar">
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div id="step-1">
+					<!-- Form Primary Info -->
+					<div class="card" style="margin-top: 60px;">
+						<div class="card-header card-header-primary cust-card-header">
+							<b>Primary Information</b>
+						</div>
+						<div class="card-body ">
+							<div class="tab-content">
+								<div class="row">
+									<div class="col-sm-4">
+										<label class="label-control bmd-label-static">1A. Call
+											Status</label> <select class="form-control">
+											<option>a. Successful</option>
+											<option>b. Partial Refusal</option>
+											<option>c. Refusal</option>
+											<option>d. Mid-course termination</option>
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group bmd-form-group is-filled">
+											<label class="bmd-label-floating">1B. Form No.</label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="label-control">1C. Date of call</label>
+											<div class="row onlyNumberInput">
+												<div class="col-sm-4">
+													<input type="text" class="form-control" Placeholder="DD"">
+												</div>
+												<div class="col-sm-4">
+													<input type="text" class="form-control" Placeholder="MM">
+												</div>
+												<div class="col-sm-4">
+													<input type="text" class="form-control" Placeholder="YYYY">
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">1D. Call conducted
+												by</label> <select class="form-control select2-single">
+												<option>Enter Name...</option>
+												<option>Manpreet</option>
+												<option>Ravindra</option>
+												<option>Ambadas</option>
+												<option>Rushee</option>
+												<option>Vikas</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="bmd-label-floating">2. Which
+												agricultural products do you currently deal with?</label>
+											<div class="row">
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															A. Fertilizers <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value=""
+															id="pesticides_agri_product_checkbox"> B.
+															Pesticides <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															C. Speciality Nutrients/WSF <span class="form-check-sign">
+																<span class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															D. Organic Fertilizers <span class="form-check-sign">
+																<span class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															E. Seeds <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															F. Veterinary Feed <span class="form-check-sign">
+																<span class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															G. Fish Feed <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															H. Poultry Feed <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															I. Agricultural Equipment <span class="form-check-sign">
+																<span class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value=""
+															id="other_agri_product_checkbox"> J. Other,
+															please specify: <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-8" id="other_agricultural_products_input"
+													style="display: none;">
+													<div class="form-group has-default">
+														<input type="text" class="form-control"
+															placeholder="Name of Agricultural Product">
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Dealer Information -->
+					<div class="card" style="margin-top: 60px;">
+						<div class="card-header card-header-primary cust-card-header">
+							<b>Dealer Information</b>
+						</div>
+						<div class="card-body ">
+							<div class="tab-content">
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">3. Dealer ID</label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">3A. Dealer Name </label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">3C. Latitude</label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">3D. Longitude</label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Dealer Shop Information -->
+					<div class="card" style="margin-top: 60px;">
+						<div class="card-header card-header-primary cust-card-header">
+							<b>Dealer Shop Information</b>
+						</div>
+						<div class="card-body ">
+							<div class="tab-content">
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">4. Address</label>
+											<textarea type="text" class="form-control" rows="4"></textarea>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">5. State </label> <input
+												type="text" class="form-control">
+										</div>
+										<div class="form-group">
+											<label class="bmd-label-floating">6. District </label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">7. Subdistrict
+												(Taluka / Tehsil / Mandal)</label> <input type="text"
+												class="form-control">
+										</div>
+										<div class="form-group">
+											<label class="bmd-label-floating">8. Pincode </label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group shop-location-container">
+											<h3 class="question-text">9. Where is this shop located?</h3>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio" name="call-status">
+													Town <span class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio" name="call-status">
+													Village <span class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">9A. Mention
+												Town/Village Name</label> <input type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">10. Office Landline
+												Number(with STD Code) </label> <input type="text"
+												class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">11. Email Id </label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-8">
+										<div class="form-group shop-location-container">
+											<h3 class="question-text">12. Are you the person who is
+												involved in managing the day to day activities of the firm?
+											</h3>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio" name="business-owner">
+													Yes <span class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio" name="business-owner"
+													id="not_business_owner_checkBox"> No <span
+													class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Q13 & Q14 -->
+					<div class="card" style="margin-top: 60px; display: none;"
+						id="main_business_owner">
+						<div class="card-header card-header-primary cust-card-header">
+							<b>Details of the main person involved in the business </b>
+						</div>
+						<div class="card-body ">
+							<div class="tab-content">
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">13A. First Name </label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">13B. Last name </label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group onlyNumberInput">
+											<label class="bmd-label-floating">14. Mobile Number </label>
+											<input type="text" class="form-control">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group text-center">
+						<button class="btn btn-primary" onclick="goToStep(2)">Next
+							Step</button>
+					</div>
+				</div>
+				<!--step one End-->
+
+				<div id="step-2" style="display: none;">
+					<div class="card" style="margin-top: 60px;">
+						<div class="card-header card-header-primary cust-card-header">
+							<b>Firm information </b>
+						</div>
+						<div class="card-body ">
+							<div class="tab-content">
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating">15. What is your
+												type of setup? </label> <select class="form-control">
+												<option>Select one</option>
+												<option>a. Proprietorship</option>
+												<option>b. Partnership</option>
+												<option>c. Private Limited Company</option>
+												<option>d. Public Limited Company</option>
+												<option>e. Co-operative</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-8">
+										<label class="bmd-label-floating">16. Your Designation
+											/ Level of association with the firm </label>
+										<div class="row">
+											<div class="form-group col-sm-6">
+												<select class="form-control" id="designation_level">
+													<option>Select one</option>
+													<option>a. Partner</option>
+													<option>b. Proprietor</option>
+													<option>c. Manager</option>
+													<option>d. Director</option>
+													<option>e. Others</option>
+												</select>
+											</div>
+											<div class="has-default col-sm-6">
+												<input class="form-control"
+													placeholder="If Others, please specify" type="text"
+													id="designation_level_other_name" disabled>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="bmd-label-floating has-filled">17. What
+												is your highest educational qualification? </label> <select
+												class="form-control">
+												<option>Select One</option>
+												<option>a. Illiterate</option>
+												<option>b. Literate, but no formal schooling</option>
+												<option>c. Up to 4th Standard</option>
+												<option>d. 5th to 9th Standard</option>
+												<option>e. SSC/HSC</option>
+												<option>f. Some college but not graduate</option>
+												<option>g. Graduate/Post Graduate - General</option>
+												<option>h. Graduate/Post Graduate - Professional</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="">18. Establishment year of firm?</label> <select
+												class="form-control select2-single" id="yearpicker">
+												<option>Enter Year...</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="">19. What percentage of your business
+												is done through wholesale? </label>
+											<div class="row">
+												<div
+													class="input-group persantageContainer col-sm-4 onlyNumberInput">
+													<input type="text" class="form-control text-right"
+														id="percentage_business_wholesale" placeholder="XX">
+													<span class="input-group-addon">%</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12" style="display: none;"
+										id="depends_percentage_business_wholesale">
+										<div class="form-group shop-location-container">
+											<label class="bmd-label-floating has-filled">19A.
+												Does the percentage of wholesale business change
+												significantly with different agricultural seasons? </label>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="different-agricultural-seasons"
+													id="different_agricultural_seasons_Yes"> Yes <span
+													class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="different-agricultural-seasons"> No <span
+													class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row" id="depend_on_19A" style="display: none;">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="">19B. Kharif</label>
+											<div class="input-group persantageContainer onlyNumberInput">
+												<input type="text" class="form-control text-right"
+													placeholder="XX"> <span class="input-group-addon">%</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group onlyNumberInput">
+											<label class="">19C. Rabi</label>
+											<div class="input-group persantageContainer onlyNumberInput">
+												<input type="text" class="form-control text-right"
+													placeholder="XX"> <span class="input-group-addon">%</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group onlyNumberInput">
+											<label class="">19D. Summer</label>
+											<div class="input-group persantageContainer onlyNumberInput">
+												<input type="text" class="form-control text-right"
+													placeholder="XX"> <span class="input-group-addon">%</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group shop-location-container">
+											<label class="">20. Does your firm deal with any
+												other category of products (non agricultural) other than
+												products mentioned in Q2? </label>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="other-category-of-products"
+													id="other_category_of_products_Yes"> Yes <span
+													class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="other-category-of-products"> No <span
+													class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12" id="category_handled_container"
+										style="display: none;">
+										<div class="form-group">
+											<label class="">21. If Yes, please mention the
+												category handled in the last financial year. </label>
+											<table
+												class="table table-bordered table-condensed table-striped text-left"
+												id="category_handled" style="max-width: 750px;">
+												<thead>
+													<tr>
+														<th style="width: 55px;">No.</th>
+														<th>Category</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="text" class="form-control"
+																	placeholder="Category Name">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="text" class="form-control"
+																	placeholder="Category Name">
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group text-center">
+						<button class="btn btn-primary" onclick="goToStep(3)">Next
+							Step</button>
+					</div>
+				</div>
+				<!--step two End-->
+
+				<div id="step-3" style="display: none;">
+					<div class="card" style="margin-top: 60px;">
+						<div class="card-header card-header-primary cust-card-header">
+							<b>Firm Infrastructure </b>
+						</div>
+						<div class="card-body ">
+							<div class="tab-content">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="">22. What is the physical
+												infrastructure (space) available for conducting the
+												business?</label>
+											<table
+												class="table table-bordered table-condensed table-striped text-left"
+												style="max-width: 750px;">
+												<thead>
+													<tr>
+														<th style="width: 55px;">Sr.</th>
+														<th></th>
+														<th>Area (in sq. ft)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>A</td>
+														<td>Shop Area</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>B</td>
+														<td>Office</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>C</td>
+														<td>Warehouse (Total, if multiple warehouses are
+															there)</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="">23. What is your staff strength?</label>
+											<table
+												class="table table-bordered table-condensed table-striped"
+												style="max-width: 750px;">
+												<thead>
+													<tr>
+														<th style="width: 55px;">Sr.</th>
+														<th>Staff</th>
+														<th style="width: 150px;">Count</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>Helper</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>Receptionist</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>Delivery Staff</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>4</td>
+														<td>Driver</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>Manager</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>6</td>
+														<td>Salesman</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>7</td>
+														<td>Others, if applicable</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<label class="bmd-label-floating has-filled">24. Does
+											your firm own a vehicle for delivery?</label>
+										<div class="form-group shop-location-container">
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="vehicle-for-delivery" id="vehicle_for_delivery_Yes">
+													Yes <span class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="vehicle-for-delivery"> No <span
+													class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4" id="vehicle_count" style="display: none;">
+										<div class="form-group onlyNumberInput">
+											<label class="">24A. How many vehicle are there?</label> <input
+												type="number" class="form-control">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="card" style="margin-top: 60px;">
+						<div class="card-header card-header-primary cust-card-header">
+							<b>IT Infrastructure </b>
+						</div>
+						<div class="card-body ">
+							<div class="tab-content">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="bmd-label-floating">25. Which of the
+												following do you currently have? <small> <i>(If
+														No Computer/Laptop please Click on next Step button)</i></small>
+											</label>
+											<div class="row">
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															Computer/Laptop <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															Printer <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															Internet/Datacard <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															Inverter (UPS) <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value="">
+															CC TV <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" id="firm_have_no_accets"
+															type="checkbox" value=""> None <span
+															class="form-check-sign"> <span class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" type="checkbox" value=""
+															id="firm_have_other_accets"> Others <span
+															class="form-check-sign"> <span class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-4" style="display: none;"
+													id="other_accets_input">
+													<div class="form-group">
+														<label class="bmd-label-floating">If Others,
+															Please Specify </label> <input type="text" class="form-control">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="jcompany_none_accets_hide">
+										<div class="col-sm-12">
+											<div class="form-group shop-location-container">
+												<label class="bmd-label-floating has-filled">26. Are
+													you currently using computer in your business? </label>
+												<div class="form-check">
+													<label class="form-check-label"> <input
+														class="form-check-input" type="radio"
+														name="computer-for-business"
+														id="computer_for_business_Yes"> Yes <span
+														class="circle"> <span class="check"></span>
+													</span>
+													</label>
+												</div>
+												<div class="form-check">
+													<label class="form-check-label"> <input
+														class="form-check-input" type="radio"
+														name="computer-for-business"> No <span
+														class="circle"> <span class="check"></span>
+													</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div id="no_computers_used_hide" style="display: none;">
+											<div class="col-sm-12">
+												<div class="form-group shop-location-container">
+													<label class="has-filled">27A. If 'Yes', Which year
+														did you computerize operations your business?</label> <input
+														type="text" class="form-control calender_year_picker">
+												</div>
+											</div>
+											<div class="col-sm-12">
+												<div class="form-group">
+													<label class="bmd-label-floating">27B. If 'Yes',
+														What do you use the computer for?</label>
+													<div class="row">
+														<div class="col-sm-4">
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" type="checkbox" value="">
+																	Billing <span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" type="checkbox" value="">
+																	Inventory Management <span class="form-check-sign">
+																		<span class="check"></span>
+																</span>
+																</label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" type="checkbox" value="">
+																	Financial Management <span class="form-check-sign">
+																		<span class="check"></span>
+																</span>
+																</label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" type="checkbox" value="">
+																	Internet Browsing for information on business <span
+																	class="form-check-sign"> <span class="check"></span>
+																</span>
+																</label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" type="checkbox" value="">
+																	Others, please specify <span class="form-check-sign">
+																		<span class="check"></span>
+																</span>
+																</label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" type="checkbox" value="">
+																	Others <span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="form-group">
+																<label class="bmd-label-floating">If Others,
+																	Please Specify </label> <input type="text" class="form-control">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group text-center">
+						<button class="btn btn-primary" onclick="goToStep(4)">Next
+							Step</button>
+					</div>
+				</div>
+				<!--step three End-->
+
+				<div id="step-4" style="display: none;">
+					<div class="card" style="margin-top: 60px;">
+						<div class="card-header card-header-primary cust-card-header">
+							<b>Sales Information </b>
+						</div>
+						<div class="card-body ">
+							<div class="tab-content">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="">28. What percentage of your Sales is
+												on credit? <small><b>(If 0, go to Q29)</b></small>
+											</label>
+											<div class="row">
+												<div
+													class="input-group persantageContainer col-sm-4 onlyNumberInput">
+													<input type="text" class="form-control text-right"
+														placeholder="Enter percentage..."> <span
+														class="input-group-addon">%</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<label class="">28A. Does the percentage of credit
+											given to your customers change significantly with different
+											agricultural seasons? <br> <small><b>(If No,
+													go to Q30)</b></small>
+										</label>
+										<div class="form-group shop-location-container">
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="credit-given-to-your-customers"
+													id="credit_to_customer_Yes"> Yes <span
+													class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="credit-given-to-your-customers"> No <span
+													class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div id="Q28A_dependancy" style="display: none; width: 100%;">
+										<div class="col-sm-12" style="margin-bottom: 25px;">
+											<label>If 'Yes', what is the credit percentage in
+												business in : </label>
+											<div class="row">
+												<div class="col-sm-4">
+													<div class="form-group">
+														<label>28B. Kharif</label>
+														<div
+															class="input-group persantageContainer onlyNumberInput">
+															<input type="text" class="form-control text-right"
+																placeholder="Enter percentage..."> <span
+																class="input-group-addon">%</span>
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-group">
+														<label>28C. Rabi </label>
+														<div
+															class="input-group persantageContainer onlyNumberInput">
+															<input type="text" class="form-control text-right"
+																placeholder="Enter percentage..."> <span
+																class="input-group-addon">%</span>
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-group">
+														<label>28D. Summer </label>
+														<div
+															class="input-group persantageContainer onlyNumberInput">
+															<input type="text" class="form-control text-right"
+																placeholder="Enter percentage..."> <span
+																class="input-group-addon">%</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<label class="bmd-label-floating has-filled">29. Does
+											your firm operate (buy or sell) the business (any category)
+											throughout the year?</label>
+										<div class="form-group shop-location-container">
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="vehicle-for-delivery" id="vehicle_for_delivery_Yes">
+													Yes <span class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="vehicle-for-delivery"> No <span
+													class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div id="Q2_Pesticides_selection_dependancy"
+										style="display: none; width: 100%;">
+										<div class="col-sm-12">
+											<label>30. Does your firm operate (buy or sell) the
+												business Pesticides throughout the year?<br> <small><b>(If
+														Yes, go to Q33)</b></small>
+											</label>
+											<div class="form-group shop-location-container">
+												<div class="form-check">
+													<label class="form-check-label"> <input
+														class="form-check-input" type="radio"
+														name="vehicle-for-delivery" id="vehicle_for_delivery_Yes">
+														Yes <span class="circle"> <span class="check"></span>
+													</span>
+													</label>
+												</div>
+												<div class="form-check">
+													<label class="form-check-label"> <input
+														class="form-check-input" type="radio"
+														name="vehicle-for-delivery"> No <span
+														class="circle"> <span class="check"></span>
+													</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="form-group">
+												<label class="bmd-label-floating">30A. If
+													'No',please tick the months, when your firm <u><b>DOES
+															NOT OPERATE</b></u> the business for Pesticides products.
+												</label>
+												<div class="row">
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																January <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																February <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																March <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																April <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																May <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																June <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																July <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																August <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																September <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																October <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																November <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="form-check">
+															<label class="form-check-label"> <input
+																class="form-check-input" type="checkbox" value="">
+																December <span class="form-check-sign"> <span
+																	class="check"></span>
+															</span>
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="form-group">
+												<label>31. How much of your sale of Pesticides is
+													coming from different seasons?</label>
+												<table
+													class="table table-bordered table-condensed table-striped text-left"
+													style="max-width: 550px;">
+													<thead>
+														<tr>
+															<th style="width: 150px;">Season</th>
+															<th>in %</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Kharif</td>
+															<td>
+																<div class="has-default form-group onlyNumberInput">
+																	<input type="number" class="form-control"
+																		placeholder="Enter percentage...">
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>Rabbi</td>
+															<td>
+																<div class="has-default form-group onlyNumberInput">
+																	<input type="number" class="form-control"
+																		placeholder="Enter percentage...">
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>Summer</td>
+															<td>
+																<div class="has-default form-group onlyNumberInput">
+																	<input type="number" class="form-control"
+																		placeholder="Enter percentage...">
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td><b>GRAND TOTAL</b></td>
+															<td><b> <span>100%</span>
+															</b></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<label class="bmd-label-floating has-filled">32.
+												Which are the Top3 crops that you are targeting for selling
+												Agro-chemical products in each season? <b>(Crop Codes
+													can be put as available, in Q36)</b>
+											</label>
+											<div class="row">
+												<div class="col-sm-4">
+													<table
+														class="table table-bordered table-condensed table-striped text-left"
+														style="max-width: 750px;">
+														<thead>
+															<tr>
+																<th style="width: 55px;">Sr.</th>
+																<th>Kharif</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>1</td>
+																<td>
+																	<div class="has-default form-group">
+																		<input type="text" class="form-control"
+																			placeholder="XXX">
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>2</td>
+																<td>
+																	<div class="has-default form-group">
+																		<input type="text" class="form-control"
+																			placeholder="XXX">
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>3</td>
+																<td>
+																	<div class="has-default form-group">
+																		<input type="text" class="form-control"
+																			placeholder="XXX">
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<div class="col-sm-4">
+													<table
+														class="table table-bordered table-condensed table-striped text-left"
+														style="max-width: 750px;">
+														<thead>
+															<tr>
+																<th style="width: 55px;">Sr.</th>
+																<th>Rabi</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>1</td>
+																<td>
+																	<div class="has-default form-group">
+																		<input type="text" class="form-control"
+																			placeholder="XXX">
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>2</td>
+																<td>
+																	<div class="has-default form-group">
+																		<input type="text" class="form-control"
+																			placeholder="XXX">
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>3</td>
+																<td>
+																	<div class="has-default form-group">
+																		<input type="text" class="form-control"
+																			placeholder="XXX">
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<div class="col-sm-4">
+													<table
+														class="table table-bordered table-condensed table-striped text-left"
+														style="max-width: 750px;">
+														<thead>
+															<tr>
+																<th style="width: 55px;">Sr.</th>
+																<th>Summer</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>1</td>
+																<td>
+																	<div class="has-default form-group">
+																		<input type="text" class="form-control"
+																			placeholder="XXX">
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>2</td>
+																<td>
+																	<div class="has-default form-group">
+																		<input type="text" class="form-control"
+																			placeholder="XXX">
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>3</td>
+																<td>
+																	<div class="has-default form-group">
+																		<input type="text" class="form-control"
+																			placeholder="XXX">
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<label class="bmd-label-floating has-filled">33. Does
+											your firm have branches or subsidiaries or more shops in
+											Agro-chemical business? </label>
+										<div class="form-group shop-location-container">
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="branches-or-subsidiaries" id="firm_have_branches_Yes">
+													Yes <span class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+											<div class="form-check">
+												<label class="form-check-label"> <input
+													class="form-check-input" type="radio"
+													name="branches-or-subsidiaries"> No <span
+													class="circle"> <span class="check"></span>
+												</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12" style="display: none;"
+										id="firm_have_branches">
+										<label class="bmd-label-floating has-filled"> If
+											'Yes', please maintain the number of Branches or Subsidiaries
+											your firm has:</label>
+										<div class="form-group">
+											<table
+												class="table table-bordered table-condensed table-striped text-left"
+												style="max-width: 750px;">
+												<thead>
+													<tr>
+														<th></th>
+														<th>All Businesses</th>
+														<th>Selling Pesticides</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>33A. Number of Branches</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>33B. Number of Subsidiaries</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group onlyNumberInput">
+																<input type="number" class="form-control"
+																	placeholder="XXX">
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="card" style="margin-top: 60px;">
+						<div class="card-header card-header-primary cust-card-header">
+							<b>Sales Details </b>
+						</div>
+						<div class="card-body ">
+							<div class="tab-content">
+								<div class="row">
+									<div class="col-sm-12">
+										<label class="bmd-label-floating has-filled">34. <b>Sales
+												Details</b> - What is the percentage breakup of various
+											businesses that your firm undertakes from this location
+											(incase your business is spread across various branches)?
+											Also mention the number of companies handled in each segment.
+											If the same company is being handled in more than one
+											segment, it has to be counted again. <br> <b>(Sum of
+												all categories should come up to 100%)</b>
+										</label>
+										<div class="form-group">
+											<table id="sale_details_tbl"
+												class="table table-bordered table-condensed table-striped text-left onlyNumberInput"
+												style="max-width: 750px;">
+												<thead>
+													<tr>
+														<th>Sales Type/Category</th>
+														<th>A. No. of companies handled</th>
+														<th>B. Percentage</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Fertilizers</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Pesticides</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Special Nutrients/Water Soluble Fertilizers</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Organic Fertilizers</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Seeds</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Veterinary Feed</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Fish Feed</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Poultry Feed</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Agricultural Equipment</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Others Agro categories (Pl Specify)
+															<div class="has-default form-group">
+																<input type="text" class="form-control" value="00">
+															</div>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Others Non Agro categories</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+														<td>
+															<div class="has-default form-group">
+																<input type="number" class="form-control" value="00">
+															</div>
+														</td>
+													</tr>
+												<tfoot>
+													<tr>
+														<td><b>GRAND TOTAL</b></td>
+														<td><b></b></td>
+														<td><b><span id="total_Sales_Percantage"></span>
+																%</b></td>
+													</tr>
+												</tfoot>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<br> <label class="bmd-label-floating">35. Which
+												Product Licenses do you have for conducting business? </label>
+											<div class="row">
+												<div class="col-sm-3">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" value="" type="checkbox">
+															Fertilizers <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" value="" type="checkbox">
+															Pesticides <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="form-check">
+														<label class="form-check-label"> <input
+															class="form-check-input" value="" type="checkbox">
+															Seeds <span class="form-check-sign"> <span
+																class="check"></span>
+														</span>
+														</label>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="form-group">
+														<label>If 'Others', please specify</label> <input
+															class="form-control" type="text" placeholder="">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group text-center">
+						<button class="btn btn-primary" onclick="goToStep(5)">Next
+							Step</button>
+					</div>
+				</div>
+				<!--Step 4 ends-->
+
+				<div id="step-5" style="display: none;">
+					<div class="card" style="margin-top: 60px;">
+						<div class="card-header card-header-primary cust-card-header">
+							<b>Season wise selling Details</b>
+						</div>
+						<div class="card-body ">
+							<div class="tab-content">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="bmd-label-floating">37. Please put a
+												tick to the crop for which your firm is selling Seeds or any
+												means for its propagation. Please put tick for each season.
+												Please add crop names at the bottom, if the names are not in
+												the list. <b>(Crops have been arranged based on Crop
+													type and then alphabetically by Crop)</b>
+											</label> <br> <br>
+											<table id="seedSaleTable"
+												class="table table-bordered table-condensed table-striped text-center season-sale-tbl">
+												<thead>
+													<tr>
+														<th>Type</th>
+														<th>Crop</th>
+														<th>Crop_Code</th>
+														<th>Kharif</th>
+														<th>Rabbi</th>
+														<th>Summer</th>
+														<th>Perennial</th>
+													</tr>
+												</thead>
+												<tbody>
+													<!--Cash Crop-->
+													<tr>
+														<td rowspan="5">Cash Crop</td>
+														<td>Chillies</td>
+														<td>105</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Cotton</td>
+														<td>45</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Jute</td>
+														<td>46</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Sugarcane</td>
+														<td>44</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Tobacco</td>
+														<td>47</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<!--cereal-->
+													<tr>
+														<td rowspan="9">Cereal</td>
+														<td>Barley</td>
+														<td>134</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Finger Millet / Ragi</td>
+														<td>26</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Foxtail Millet / Korra</td>
+														<td>27</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Maize / Corn</td>
+														<td>23</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Oats</td>
+														<td>160</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Paddy / Rice</td>
+														<td>22</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Pearl Millet / Bajra</td>
+														<td>25</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Sorghum / Jowar</td>
+														<td>24</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Wheat</td>
+														<td>28</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<!--Flower -->
+													<tr>
+														<td rowspan="3">Flower</td>
+														<td>Jasmine</td>
+														<td>4444</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Marigold</td>
+														<td>4443</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Rose</td>
+														<td>4459</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<!--Fruit-->
+													<tr>
+														<td rowspan="13">Fruit</td>
+														<td>Apple</td>
+														<td>4440</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Banana</td>
+														<td>50</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Citrus</td>
+														<td>51</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Grape</td>
+														<td>52</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Guava</td>
+														<td>4452</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Lemon</td>
+														<td>4453</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Mango</td>
+														<td>49</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Musk Melon</td>
+														<td>4455</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Papaya</td>
+														<td>4456</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Pineapple</td>
+														<td>4439</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Pomegranate</td>
+														<td>3842</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Sapota</td>
+														<td>4460</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Strawberry</td>
+														<td>3841</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<!--Oilseed -->
+													<tr>
+														<td rowspan="8">Oilseed</td>
+														<td>Castor</td>
+														<td>41</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Groundnut</td>
+														<td>36</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Linseed</td>
+														<td>42</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Mustard / Rapeseed</td>
+														<td>43</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Safflower</td>
+														<td>38</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Sesamum</td>
+														<td>37</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Soybean</td>
+														<td>40</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Sunflower</td>
+														<td>39</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<!--Plantation  -->
+													<tr>
+														<td rowspan="5">Plantation</td>
+														<td>Cashew Nut</td>
+														<td>62</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Coconut</td>
+														<td>63</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Coffee</td>
+														<td>65</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Mulberry</td>
+														<td>4454</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Tea</td>
+														<td>64</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<!--Pulses   -->
+													<tr>
+														<td rowspan="4">Pulses</td>
+														<td>Blackgram</td>
+														<td>31</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Gram</td>
+														<td>32</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Greengram</td>
+														<td>30</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Redgram</td>
+														<td>29</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<!--Spice  -->
+													<tr>
+														<td rowspan="7">Spice</td>
+														<td>Arecanut</td>
+														<td>3579</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Cardamom</td>
+														<td>113</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Coriander</td>
+														<td>4449</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Cumin</td>
+														<td>4445</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Garlic</td>
+														<td>3263</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Ginger</td>
+														<td>3578</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Turmeric</td>
+														<td>111</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<!--Vegetable -->
+													<tr>
+														<td rowspan="23">Vegetable</td>
+														<td>Amorphaphalus</td>
+														<td>4446</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Beans</td>
+														<td>3575</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Beet-root</td>
+														<td>98</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Bitter Gourd</td>
+														<td>4447</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Brinjal</td>
+														<td>70</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Cabbage</td>
+														<td>80</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Capsicum</td>
+														<td>4448</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Carrot</td>
+														<td>3843</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Cauliflower</td>
+														<td>81</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Cluster beans / Guar</td>
+														<td>4442</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Colocasia / Arvi</td>
+														<td>97</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Cowpea</td>
+														<td>33</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Cucumber</td>
+														<td>4450</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Gourd</td>
+														<td>4451</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Knol-Khol</td>
+														<td>73</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Okra / Bhendi</td>
+														<td>69</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Onion</td>
+														<td>99</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Pea</td>
+														<td>84</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Pointed Gourd</td>
+														<td>4457</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Potato</td>
+														<td>101</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Ridge Gourd</td>
+														<td>4458</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Tapioca</td>
+														<td>4438</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Tomato</td>
+														<td>71</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<!--Others  -->
+													<tr>
+														<td rowspan="13">Others</td>
+														<td>Betel leaf</td>
+														<td>3577</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Opium</td>
+														<td>4441</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Sunhemp</td>
+														<td>48</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+														<td>
+															<div class="form-check">
+																<label class="form-check-label"> <input
+																	class="form-check-input" value="" type="checkbox">
+																	<span class="form-check-sign"> <span
+																		class="check"></span>
+																</span>
+																</label>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<br> <label class="bmd-label-floating">38. In
+												the attached sheet, please mention the company name (through
+												codes) and put tick to mention the products that your firm
+												is dealing with from that company. If the product is
+												directly purchased from the Company or Manufacturer, put a
+												tick in 'Direct Buy', if the products are being purchased
+												from other Wholesale Dealers or Distributors, put a tick in
+												'Indirect Buy'. If any company is not appearing in the list,
+												please put the code "7000" for the company "Others Please
+												specify" and maintaion the Company name. A "Company Master"
+												list is vailable with the Company names arranged in
+												alphabetical list for selection. Please pick the
+												Company_code in front of the corresponding company name and
+												mention in the attached sheet</label>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="bmd-label-floating">39. FIELD
+												OBSERVATION (if any)</label>
+											<textarea type="text" class="form-control" rows="3"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group text-center">
+						<button class="btn btn-primary">Finish</button>
+					</div>
+				</div>
+				<!--Step 4 ends-->
+			</div>
+		</div>
+	</div>
+</div>

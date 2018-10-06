@@ -1,0 +1,42 @@
+<div ng-controller="loginController" class="page-header header-filter login-page-header" style="background-image: url('/DealerCensus/images/bg3.jpg');">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-6 ml-auto mr-auto">
+				<div class="card card-login">
+					<form class="form" name="loginForm" role="form" ng-submit="LoginUser()">
+						<div class="card-header card-header-primary text-center">
+							<h4 class="card-title">
+								<img class="login-logo-img" src="/DealerCensus/images/logo-white.png">
+							</h4>
+						</div>
+						<p class="description text-center">Login</p>
+						<div ng-show="error != null">Invalid email / password</div>
+						<div class="card-body">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i
+										class="material-icons">mail</i>
+									</span>
+								</div>
+								<input type="email" class="form-control" ng-model="email"
+									placeholder="Email..." autocomplete=false required>
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i
+										class="material-icons">lock_outline</i>
+									</span>
+								</div>
+								<input type="password" class="form-control" ng-model="password"
+									placeholder="Password..." autocomplete=false required>
+							</div>
+						</div>
+						<div class="footer text-center">
+							<input type="button" class="btn btn-primary" ng-disable="loginForm.$invalid" ng-click="loginUser()" type="submit" value="Get Started" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

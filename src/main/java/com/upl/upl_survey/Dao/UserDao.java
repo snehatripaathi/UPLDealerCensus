@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
 
+import com.upl.upl_survey.Model.CallStatusData;
 import org.apache.ibatis.annotations.Param;
 
 import com.upl.upl_survey.Model.FormMaster;
@@ -31,7 +32,11 @@ public interface UserDao {
 
 	void createForm(@Param("id") Long id, @Param("form_id") String form_id, @Param("created_by") Long created_by,
 			@Param("dealer_name") String dealer_name, @Param("created_date") Date created_date,
-			@Param("updated_date") Date updated_date , @Param("last_updated_by") Long last_updated_by);
+			@Param("updated_date") Date updated_date , @Param("last_updated_by") Long last_updated_by,
+					@Param("state") String state,
+					@Param("call_status") String callStatus,
+					@Param("district") String district,
+					@Param("sub_district") String subDistrict);
 
 	void insertFormDetails(@Param("id") Long id, @Param("form_detail") byte[] form_detail, @Param("date") Date date,
 			@Param("form_master_id") Long form_master_id, @Param("updated_by") Long updated_by);
@@ -41,7 +46,11 @@ public interface UserDao {
 	void deleteForm(@Param("id") Long id);
 
 	void updateFormMasterData(@Param("id") Long id, @Param("form_id") String form_id,
-			@Param("last_updated_by") Long last_updated_by, @Param("updated_date") Date updated_date, @Param("dealer_name") String dealer_name);
+			@Param("last_updated_by") Long last_updated_by, @Param("updated_date") Date updated_date, @Param("dealer_name") String dealer_name,
+							  @Param("state") String state,
+							  @Param("call_status") String callStatus,
+							  @Param("district") String district,
+							  @Param("sub_district") String subDistrict);
 
 	List<FormMaster> getAllForms();
 
@@ -50,4 +59,5 @@ public interface UserDao {
 	void updateSequenceId(@Param("name") String name, @Param("seq_id") Long seq_id);
 
 	void updateIsUpdated(@Param("form_master_id") Long form_master_id);
+	List<CallStatusData> getCallStatusData();
 }

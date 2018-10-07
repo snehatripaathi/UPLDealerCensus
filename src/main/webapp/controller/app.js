@@ -41,6 +41,7 @@ var upl_survey = angular.module("upl_survey", [ 'ngRoute', 'ngResource',
 				controller : 'userController'
 			}).
 
+
 			otherwise({
 				redirectTo : '/'
 			});

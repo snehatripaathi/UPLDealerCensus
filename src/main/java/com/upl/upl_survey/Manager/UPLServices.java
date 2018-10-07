@@ -1,20 +1,25 @@
 package com.upl.upl_survey.Manager;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +40,9 @@ public class UPLServices {
 
 	@Autowired
 	PasswordValidation passEncrp;
+
+	@Autowired
+	CallStatusSerivce callStatusSerivce;
 
 	@POST
 	@RequestMapping(value = "/loginUser", method = RequestMethod.POST)
@@ -131,14 +139,18 @@ public class UPLServices {
 	@POST
 	@RequestMapping(value = "/createForm", method = RequestMethod.POST)
 	public void insertFormData(@QueryParam("form_detail") String form_detail, @QueryParam("form_id") String form_id,
-			@QueryParam("created_by") Long created_by, @QueryParam("dealer_name") String dealer_name) {
+			@QueryParam("created_by") Long created_by, @QueryParam("dealer_name") String dealer_name,
+							   @QueryParam("state") String state,
+							   @QueryParam("callStatus") String callStatus,
+							   @QueryParam("district") String district,
+							   @QueryParam("subDistrict") String subDistrict ) {
 		logger.info("In create form");
 		Long formMasterId = userDao.getUserId("FormMaster");
 		Long formDetailsId = userDao.getUserId("FormDetails");
 		formMasterId = formMasterId + 1;
 		Date created_date = new Date();
 		Date updated_date = new Date();
-		userDao.createForm(formMasterId, form_id, created_by, dealer_name, created_date, updated_date, created_by);
+		userDao.createForm(formMasterId, form_id, created_by, dealer_name, created_date, updated_date, created_by,state,callStatus,district,subDistrict);
 
 		formDetailsId = formDetailsId + 1;
 		Long form_master_id = userDao.getFormId(form_id);
@@ -163,7 +175,11 @@ public class UPLServices {
 	@RequestMapping(value = "/updateForm", method = RequestMethod.POST)
 	public void updateFormData(@QueryParam("id") Long id, @QueryParam("form_detail") String form_detail,
 			@QueryParam("form_id") String form_id, @QueryParam("last_updated_by") Long last_updated_by,
-			@QueryParam("dealer_name") String dealer_name, @QueryParam("fromMasterId") Long fromMasterId) {
+			@QueryParam("dealer_name") String dealer_name, @QueryParam("fromMasterId") Long fromMasterId,
+							               @QueryParam("state") String state,
+	                                       @QueryParam("callStatus") String callStatus,
+										   @QueryParam("district") String district,
+										   @QueryParam("subDistrict") String subDistrict) {
 		logger.info("update Form");
 		logger.info("form_id " + form_id + " form_detail " + form_detail + "last_updated_by" + last_updated_by
 				+ "dealer_name" + dealer_name + "fromMasterId" + fromMasterId);
@@ -171,7 +187,7 @@ public class UPLServices {
 		Long formDetailsId = userDao.getUserId("FormDetails");
 		formDetailsId = formDetailsId + 1;
 		byte[] formData = form_detail.getBytes();
-		userDao.updateFormMasterData(id, form_id, last_updated_by, updated_date, dealer_name);
+		userDao.updateFormMasterData(id, form_id, last_updated_by, updated_date, dealer_name,state,callStatus,district,subDistrict);
 //		Long form_master_id = userDao.getFormId(form_id);
 		
 		userDao.insertFormDetails(formDetailsId, formData, updated_date, fromMasterId, last_updated_by);
@@ -204,4 +220,18 @@ public class UPLServices {
 		logger.info("list" + list.toString());
 		return surveyFormData;
 	}
+
+	@RequestMapping(value ="/getCallStatusReport", method = RequestMethod.GET, produces = "application/vnd.ms-excel")
+	public HttpEntity<byte[]> downloadCallStatusReport(HttpServletResponse response) throws IOException {
+		byte[] reportData=callStatusSerivce.createCallStatusReport();
+		StringBuilder fileName=new StringBuilder("Call_Status_");
+		SimpleDateFormat sdfName=new SimpleDateFormat("dd_MMM_YYYY_HH_mm_ss");
+		fileName.append(sdfName.format(new Date()));
+		fileName.append(".xlsx");
+		response.addHeader("Content-Disposition", "attachment; filename=" + fileName.toString());
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+		return new HttpEntity<byte[]>(reportData, headers);
+	}
+
 }

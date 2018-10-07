@@ -72,7 +72,9 @@ upl_survey.controller("surveyController", [
 //			console.log(form_detail);
 			$scope.last_updated_by = sourceObject.currentUser.id;
 			surveyService.updateForm(data.id, form_detail,
-					data.B1, $scope.last_updated_by, data.A3, data.fromMasterId).then(
+					data.B1, $scope.last_updated_by, data.A3, data.fromMasterId,data.State5,data.A1,
+                                                                                				data.district6,
+                                                                                				data.subdistrict7).then(
 				function(response) {
 //					console.log(response);
 					$scope.userDetails = response.data.items;
@@ -115,7 +117,9 @@ upl_survey.controller("surveyController", [
 			//form_detail = data.toString();
 //			console.log("from details :"+form_detail);
 			surveyService.createForm(form_detail, data.B1,
-				$scope.created_by, data.A3).then(function(response) {
+				$scope.created_by, data.A3,data.State5,data.A1,
+				data.district6,
+				data.subdistrict7).then(function(response) {
 //				console.log(response);
 				$location.url('/surveyList');
 			}, function(response) {
@@ -142,7 +146,7 @@ upl_survey.service('surveyService', [
 	function($http) {
 
 		this.updateForm = function updateForm(id, form_detail, form_id,
-			last_updated_by, dealer_name, fromMasterId) {
+			last_updated_by, dealer_name, fromMasterId,state,callStatus,district,subDistrict) {
 			return $http({
 				method : 'POST',
 				url : '/DealerCensus/upl_survey/updateForm',
@@ -152,7 +156,11 @@ upl_survey.service('surveyService', [
 					form_id : form_id,
 					last_updated_by : last_updated_by,
 					dealer_name : dealer_name,
-					fromMasterId : fromMasterId
+					fromMasterId : fromMasterId,
+					state : state,
+                    callStatus : callStatus,
+                    district : district,
+                    subDistrict : subDistrict
 				}
 			});
 		}
@@ -168,16 +176,22 @@ upl_survey.service('surveyService', [
 		}
 
 		this.createForm = function createForm(form_detail, form_id,
-			created_by,dealer_name ) {
-			return $http({
+			created_by,dealer_name, state,callStatus,district,subDistrict){
+						return $http({
 				method : 'POST',
 				url : '/DealerCensus/upl_survey/createForm',
 				params : {
 					form_detail : form_detail,
 					form_id : form_id,
 					created_by : created_by,
-					dealer_name : dealer_name
+					dealer_name : dealer_name,
+					state : state,
+                    callStatus : callStatus,
+                    district : district,
+                    subDistrict : subDistrict
 				}
 			});
 		}
+
+
 	} ]);

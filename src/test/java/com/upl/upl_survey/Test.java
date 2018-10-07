@@ -2,6 +2,7 @@
 
 package com.upl.upl_survey;
 
+import com.upl.upl_survey.Manager.CallStatusSerivce;
 import com.upl.upl_survey.Manager.PasswordValidation;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +22,18 @@ public class Test {
     @Autowired
     PasswordValidation passEncrp;
 
+    @Autowired
+    CallStatusSerivce callStatusSerivce;
+
 	@org.junit.Test
 	public void sample() {
        String password= passEncrp.decrypt("KPB/TsdMRV1Mui93AWrlUA==");
        System.out.print("******************************************"+password);
+        callStatusSerivce.createCallStatusReport();
 	}
 
 }
+
 
 
 */

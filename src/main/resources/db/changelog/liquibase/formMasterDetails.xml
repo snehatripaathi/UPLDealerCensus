@@ -59,4 +59,14 @@
 			referencedTableName="user_details" referencedColumnNames="id" />
 	</changeSet>
 
+	<changeSet author="dealerCensus" id="changelog-1.1">
+
+		<addColumn tableName="form_master">
+			<column name="state" type="VARCHAR(255)"></column>
+			<column name="district" type="VARCHAR(255)"></column>
+			<column name="sub_district" type="VARCHAR(255)"></column>
+			<column name="call_status" type="VARCHAR(50)"></column>
+		</addColumn>
+	</changeSet>
+
 </databaseChangeLog>

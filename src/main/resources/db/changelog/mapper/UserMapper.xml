@@ -124,7 +124,12 @@
 
 	<insert id="createForm">
 		INSERT INTO form_master
-		(id, form_id, dealer_name, is_deleted, created_date, updated_date, created_by, last_updated_by, language_id)
+		(id, form_id, dealer_name, is_deleted, created_date, updated_date, created_by, last_updated_by, language_id,
+		 state,
+		 district,
+		 sub_district,
+		 call_status
+		)
 		VALUES
 		(#{id, jdbcType=INTEGER}, 
 		#{form_id, jdbcType=VARCHAR},
@@ -134,7 +139,11 @@
 		#{updated_date, jdbcType=DATE}, 
 		#{created_by, jdbcType=INTEGER},
 		#{last_updated_by, jdbcType=INTEGER},
-		1)
+		1,
+		#{state, jdbcType=VARCHAR},
+		#{district, jdbcType=VARCHAR},
+		#{sub_district, jdbcType=VARCHAR},
+		#{call_status, jdbcType=VARCHAR})
 	</insert>
 	
 	<select id="getFormId" resultType="java.lang.Long">
@@ -172,7 +181,11 @@
 		form_id = #{form_id},
 		updated_date = #{updated_date},
 		last_updated_by = #{last_updated_by},
-		dealer_name= #{dealer_name}
+		dealer_name= #{dealer_name},
+		state = #{state, jdbcType=VARCHAR},
+		district = #{district, jdbcType=VARCHAR},
+		sub_district = #{sub_district, jdbcType=VARCHAR},
+		call_status = #{call_status, jdbcType=VARCHAR}
 		where id = #{id, jdbcType=INTEGER}
 	</update>
 	
@@ -195,6 +208,17 @@
 		  FROM form_master fmaster
 	      LEFT JOIN form_details fdetails ON (fdetails.form_master_id = fmaster.id)
 	      WHERE fmaster.is_deleted = 0 AND fdetails.is_updated = 1
+	</select>
+
+
+	<select id="getCallStatusData" resultType="com.upl.upl_survey.Model.CallStatusData">
+		SELECT mst.sub_district as subDistrict,
+		mst.state as state,
+		mst.district as district,
+		mst.call_status as callStatus,
+		count(call_status) as statusCount
+		from form_master mst
+		group by mst.call_status,mst.sub_district;
 	</select>
 	
 </mapper>
